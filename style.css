@@ -144,7 +144,7 @@ footer{
 }
 
 .dcard{
-    background-image: url("images/AdobeStock_109047968.JPEG");
+    background-image: url("./images/AdobeStock_109047968.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -182,7 +182,7 @@ footer{
 }
 
 .ccard{
-    background-image: url("images/AdobeStock_86788398.JPEG");
+    background-image: url("./images/AdobeStock_86788398.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
