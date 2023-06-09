@@ -1,69 +1,383 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
 body{
-    background-color: beige;
-}
-.container{
-    display: grid;
-    place-items: center;
-    margin-top: 30px;
+    background-color:#fdfff0;
 }
 
-h1{
-    text-align: center;
-    font-size: 2rem;
-    font-family: Lobster, cursive;
-    padding-top: 10px;
-    color:rgb(46, 51, 56);
-    text-shadow: 1px 1px 2px white;
+header{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: white;
 }
 
-.cards{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 2em;
+.welcome{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 
-.card{
-    height: 140px;
-    width: 120px;
+header h1{
+    font-size: 3rem;
+}
+
+.welcome h2{
+    font-size: 2.5rem;
+    background: -webkit-linear-gradient(#833ab4, #fd1d1d, #fcb045);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.games{
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.games p{
+    font-size: 2.5rem;
+}
+
+.games h2{
+    font-size: 3rem;
+}
+
+.games img{
+    width: 400px;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.game{
+    padding: 20px;
+    width: 450px;
+    height: auto;
     border-radius: 10px;
-    background-image: url("./images/cute-colorful-kitten-pow-pattern-design/14710.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 6px 8px 13px -1px rgba(0,0,0,0.75);
+}
+
+.game:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.start{
+    padding: 10px;
+    width: 150px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: white;
+    border: 3px solid;
+    border-color: #42b883;
+    border-radius: 30px;
+}
+
+.start:hover{
+    background-color: #42b883;
+    transition: 1s;
     cursor: pointer;
-    border: 2px solid grey;
+    transform: scale(1.1);
+    box-shadow: 6px 8px 13px -1px rgba(0,0,0,0.75);
+    color: white;
 }
 
-.card:hover{
-    transform-scale:(1.02);
-    box-shadow: 5px 5px 11px 0px rgba(0,0,0,0.75);
+footer{
+    margin-top: 100px;
+    height: 100px;
+    background: rgba(252,176,69,1);
+    background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%,  rgba(131,58,180,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.card img{
-    height: 80%;
-    width: 100%;
-    transition: 0.2rem;
-    display: grid;
-    place-items: center;
-   padding-top: 13px;
-   transition: 0,2s all ease;
-   opacity: 0;
+.back{
+    position: absolute;
+    margin: 50px 0px 0px 50px;
+    padding: 10px;
+    width: 150px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #42b883;
+    border: 3px solid;
+    border-color: black;
+    border-radius: 30px;
 }
 
-.card.clicked{
+.back:hover{
+    background-color: #42b883;
+    border-color: white;
+    transition: 1s;
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 6px 8px 13px -1px rgba(0,0,0,0.75);
+    color: white;
+}
+
+.dogs-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.dcards{
+    width: 900px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dcard{
+    background-image: url("/images/AdobeStock_109047968.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.dcard:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.dcards img{
+    width: 230px;
+    height: 160px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.cats-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ccards{
+    width: 900px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ccard{
+    background-image: url("/images/AdobeStock_86788398.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.ccards img{
+    width: 230px;
+    height: 160px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.ccard:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.dcard.clicked{
     background-image: none;
-    background-color:lightseagreen;
 }
 
-.card.clicked img{
+.dcard.clicked:hover{
+    transform: none;
+    transition: none;
+}
+
+.dcard.clicked img{
     opacity: 1;
 }
 
-.card.correct{
-    background-color: mediumseagreen;
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+.dcard.falsetip{
+    animation: shake 1.5s;
+    border-style: solid;
+    border-color: red
+}
+
+@keyframes shade{
+    0% {opacity: 1;}
+    25% {opacity: 0.75}
+    50% {opacity: 0.5}
+    75% {opacity: 0.25}
+    100% {opacity: 0}
+}
+
+.dcard.correct img{
+    animation: shade 1.5s linear;
+    cursor: default;
+    transform: scale(1.1);
+    opacity: 0;
+ }
+
+.dcard.correct{
+    opacity: 0;
+    cursor:not-allowed;
+ }
+
+.dcard.falsetip img{
+    animation: shade 1.5s linear;
+    opacity: 0;
+}
+
+.ccard.clicked{
+    background-image: none;
+}
+
+.ccard.clicked:hover{
+    transform: none;
+    transition: none;
+}
+
+.ccard.clicked img{
+    opacity: 1;
+}
+
+.ccard.falsetip{
+    animation: shake 1.5s;
+    border-style: solid;
+    border-color: red
+}
+
+.ccard.correct img{
+    animation: shade 1.5s linear;
+    cursor: default;
+    transform: scale(1.1);
+    opacity: 0;
+ }
+
+.ccard.correct{
+    opacity: 0;
+    cursor:not-allowed;
+ }
+
+.ccard.falsetip img{
+    animation: shade 1.5s linear;
+    opacity: 0;
+}
+
+.ccard.disabled {
+    pointer-events: none;
+}
+
+.dwin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -650px;
+    animation: show 1s linear, 
+                transform 1s linear;
+}
+
+.cwin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -650px;
+    animation: show 1s linear, 
+                transform 1s linear;
+}
+
+@keyframes show{
+    0% {opacity: 0;}
+    50% {opacity: 0.5}
+    100% {opacity: 1}
+}
+
+@keyframes transform{
+    from {transform: scale(1)}
+    to {transform: scale(1.1)}
+}
+
+.dwin img{
+    width: 750px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.cwin img{
+    width: 750px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+
+.dwin h1{
+    font-size: 3rem;
+    background: -webkit-linear-gradient(#833ab4, #fd1d1d, #fcb045);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cwin h1{
+    font-size: 3rem;
+    background: -webkit-linear-gradient(#833ab4, #fd1d1d, #fcb045);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.firsthidden{
+    display: none;
+}
+
+.dwin.dgamewin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cwin.dgamewin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dcard.disabled {
+    pointer-events: none;
+}
+
