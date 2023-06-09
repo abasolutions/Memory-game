@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html"><button class="back">Back</button></a>
+    <div class="cats-container">
+        <div class="ccards">
+            <div class="ccard" name="cat1">
+                <img src="images/AdobeStock_76235346.JPEG" alt="cat1">
+            </div>
+            <div class="ccard" name="cat5">
+                <img src="images/AdobeStock_272304663.JPEG" alt="cat5">
+            </div>
+            <div class="ccard" name="cat2">
+                <img src="images/AdobeStock_175054075.JPEG" alt="cat2">
+            </div>
+            <div class="ccard" name="cat3">
+                <img src="images/AdobeStock_271611974.JPEG" alt="cat3">
+            </div>
+            <div class="ccard" name="cat6">
+                <img src="images/AdobeStock_275491668.JPEG" alt="cat6">
+            </div>
+            <div class="ccard" name="cat4">
+                <img src="images/AdobeStock_208013553.JPEG" alt="cat4">
+            </div>
+            <div class="ccard" name="cat3">
+                <img src="images/AdobeStock_271611974.JPEG" alt="cat3">
+            </div>
+            <div class="ccard" name="cat2">
+                <img src="images/AdobeStock_175054075.JPEG" alt="cat2">
+            </div>
+            <div class="ccard" name="cat5">
+                <img src="images/AdobeStock_272304663.JPEG" alt="cat5">
+            </div>
+            <div class="ccard" name="cat1">
+                <img src="images/AdobeStock_76235346.JPEG" alt="cat1">
+            </div>
+            <div class="ccard" name="cat6">
+                <img src="images/AdobeStock_275491668.JPEG" alt="cat6">
+            </div>
+            <div class="ccard" name="cat4">
+                <img src="images/AdobeStock_208013553.JPEG" alt="cat4">
+            </div>
+        </div>
+    </div>
+    <div class="cwin firsthidden" name="cwin" id="cwin">
+        <h1>Congratulation, you win!</h1>
+        <img src="images/AdobeStock_279498131.JPEG" alt="cwin">
+    </div>
+    <script>
+        let tips = 0;
+        let counter = 0;
+        let win = '';
+        let firstTip = '';
+        let secondTip = '';
+        let firstTipAt = '';
+        let secondTipAt = '';
+        const cards = document.querySelectorAll(".ccards .ccard");
+        cards.forEach((card) => {
+            card.addEventListener("click", () => {
+                card.classList.add("clicked", "disabled");
+                if (tips === 0){
+                    firstTip = card;
+                    firstTipAt = card.getAttribute("name");
+                    tips++;
+                }
+                else {
+                    secondTip = card;
+                    secondTipAt = card.getAttribute("name");
+                    if (firstTipAt === secondTipAt){
+                    firstTip.classList.add("correct");
+                    secondTip.classList.add("correct");
+                    counter++;
+                    } 
+                    else {
+                        firstTip.classList.add("falsetip");
+                        secondTip.classList.add("falsetip");
+                    }
+                    tips = 0;
+                }
+                setTimeout(function(){
+                    if (firstTip.classList.contains("falsetip")){
+                        firstTip.classList.remove("falsetip");
+                        firstTip.classList.remove("clicked");
+                        firstTip.classList.remove("disabled");
+                    }
+                    if (secondTip.classList.contains("falsetip")){
+                        secondTip.classList.remove("falsetip");
+                        secondTip.classList.remove("clicked");
+                        secondTip.classList.remove("disabled");
+                    }
+                }, 2400
+                );  
+                if (counter === 6){
+                   const win = document.getElementById("cwin");
+                    win.classList.remove("firsthidden");
+                }
+            });
+        })
+
+</script>
+</body>
+</html>
